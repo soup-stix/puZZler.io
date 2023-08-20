@@ -3,7 +3,7 @@ import { ref, computed } from 'vue'
 
 const n = ref(4)
 const placed = ref(n.value)
-const board = ref([]);
+const board = ref<number[][]>([]);
 let started = true;
 // const winner = true
 
