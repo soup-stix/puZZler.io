@@ -124,7 +124,7 @@ const isWithinBounds = (row: number, col: number) => {
       <button v-if="started" type="button" @click="initializeArray" class="w3-btn w3-round w3-pink w3-center w3-margin">Start</button>
     </form>
     <div v-for="(row, x) in board" :key="x" class="">
-      <div v-for="(cell, y) in row" :key="y" @click="makeMove(x,y)" v-bind:class="(winner && placed != 0) ? 'w3-btn w3-round w3-white w3-border w3-border-grey w3-hover-border-pink w3-center w3-padding-16 w3-xxlarge' : (winner && placed === 0) ? 'w3-btn w3-round green w3-border w3-border-grey w3-hover-border-pink w3-center w3-padding-16 w3-xxlarge' : 'w3-btn w3-round red w3-border w3-border-grey w3-hover-border-pink w3-center w3-padding-16 w3-xxlarge'" style="width: 85px; height:85px">
+      <div v-for="(cell, y) in row" :key="y" @click="makeMove(x,y)" v-bind:class="(winner && placed != 0) ? 'w3-btn box w3-round w3-white w3-border w3-border-grey w3-hover-border-pink w3-center' : (winner && placed === 0) ? 'w3-btn box w3-round green w3-border w3-border-grey w3-hover-border-pink w3-center' : 'w3-btn box w3-round red w3-border w3-border-grey w3-hover-border-pink w3-center'">
         {{ cell === 1 ? '👑' : ''}}
       </div>
     </div>
@@ -141,5 +141,27 @@ const isWithinBounds = (row: number, col: number) => {
 
 .green{
   background-color: rgba(114, 237, 167, 0.9);
+}
+
+@media screen and (max-width: 600px) {
+  .box{
+    height: 40px;
+    width: 40px;
+  }
+}
+
+@media screen and (min-width: 600px) {
+  .box{
+    height: 50px;
+    width: 50px;
+  }
+}
+
+@media screen and (min-width: 1024px)
+{
+  .box{
+    height: 85px;
+    width: 85px;
+  }
 }
 </style>
